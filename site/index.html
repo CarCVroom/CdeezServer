@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Login page</title>
+        <script defer src="script.js"></script>
+        <style>
+                .login {
+                        display: flex;
+                        flex-direction: column;
+                        width: 200px;
+                        gap: 10px;
+                }
+                body {
+                        background-color: black;
+                        color: white;
+                }
+        </style>
+        <link rel="icon" type="image/png" href="../assets/passwordFavicon.png">
+</head>
+<body>
+        <form class="login">
+                <h1>Login</h1>
+
+                <label>Username</label>
+                <input type="text" id="username">
+
+                <label>Password</label>
+                <input type="password" id="password">
+
+                <button type="button" onclick="test()">Login</button>
+
+                <button type="button" onclick="window.location.href='login.html'">Make new password</button>
+        </form>
+</body>
+</html>
