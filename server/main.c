@@ -24,6 +24,7 @@ int main(void) {
 
         // GET /[file] ...
         if (memcmp(request, "GET / ", 6) == 0) {
+                printf("Got it");
                 FILE *f = fopen("index.html", "r");
                 char buffer[256] = {0};
                 fread(buffer, 1, 256, f);
