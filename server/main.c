@@ -6,7 +6,9 @@ int main(void) {
         
         WSADATA wsadata;
         WSAStartup(MAKEWORD(2, 2), &wsadata);
+        
         SOCKET s = socket(AF_INET, SOCK_STREAM, 0);
+
         struct sockaddr_in addr;
         addr.sin_family = AF_INET;
         addr.sin_addr.s_addr = 0;
