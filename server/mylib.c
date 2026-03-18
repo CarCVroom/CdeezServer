@@ -1,7 +1,19 @@
 #include <stdio.h>
 
-int onePlusOne(int a, int b) {
+int onePlusOne(int a, int b, char operator) {
 
-        return a + b;
+        switch (operator) {
+                case '+':
+                        return a + b;
+                case '-':
+                        return a - b;
+                case '*':
+                        return a * b;
+                case '/':
+                        return a / b;
+                default:
+                        return 1;
+                        break;
+        }
 }
 
