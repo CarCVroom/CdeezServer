@@ -7,15 +7,21 @@ import sys
 math1 = 0
 math2 = 0
 valueOne = 0
+valueTwo = 0
+operator = ""
 
 def value1(value):
         global valueOne
-        valueOne = value
+        valueOne += str(value)
 
         global valueTwo 
-        valueTwo= value
+        valueTwo += str(value)
         global math2 
-        math2= value
+        math2 += str(value)
+        valueTwo = int(valueTwo)
+        valueOne = int(valueOne)
+        math2 = int(math2)
+        label.config(text=f'1st number is {valueOne}, the seccond is {math2}, operator is {operator}')
 
 
 
@@ -27,13 +33,18 @@ def oparator1(value):
         math1 = valueOne
 
 
-
-
-def printTest():
-        print(math1)
-        print(math2)
-        print(operator)
-
+def clear():
+        global valueTwo
+        valueTwo = 0
+        global math1
+        math1 = 0
+        global valueOne
+        valueOne = 0
+        global math2
+        math2 = 0
+        global operator 
+        operator = ""
+        label.config(text=f'1st number is {valueOne}, the seccond is {math2}, operator is {operator}')
 
 
 # Sets local path for ctypes
@@ -92,6 +103,8 @@ minus.place(relx=0.68, rely=0.82, anchor="center")
 multi = tk.Button(root, height=10, width=20,text="*", command=lambda: oparator1("*"))
 multi.place(relx=0.32, rely=0.82, anchor="center")
 
+
+
 def math(operatorF, math1, math2):
         operatorF = ord(operatorF[0])
         resualt = lib.onePlusOne(math1, math2, operatorF)
@@ -100,5 +113,8 @@ def math(operatorF, math1, math2):
 
 label = tk.Label(root, text="")
 label.place(relx=0.5, rely=0.95, anchor="center")
+
+clearBtn = tk.Button(root, text="Clear")
+clearBtn.place(relx=0.32, rely=0.8, anchor="center")
 
 root.mainloop()
