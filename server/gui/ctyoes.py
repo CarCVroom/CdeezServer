@@ -4,10 +4,14 @@ from tkinter import ttk
 import os
 import sys
 
+valueOne = 0
+valueTwo = 0
+operator = ""
+
 # Sets local path for ctypes
-ext = ".dll" if sys.platform == "win32" else ".so"
-dir = os.path.dirname(os.path.abspath(__file__))
-lib = ctypes.CDLL(os.path.join(dir, f"../mylib{ext}"))
+#ext = ".dll" if sys.platform == "win32" else ".so"
+#dir = os.path.dirname(os.path.abspath(__file__))
+#lib = ctypes.CDLL(os.path.join(dir, f"../mylib{ext}"))
 
 root = tk.Tk()
 
@@ -15,7 +19,7 @@ root = tk.Tk()
 root.title("simple calulator")
 root.geometry("900x900")
 
-one = tk.Button(root, height=10,width=20,text="1")
+one = tk.Button(root, height=10,width=20,text="1", )
 one.place(relx=0.32, rely=0.1, anchor="center")
         
 two = tk.Button(root, height=10, width=20,text="2")
@@ -60,8 +64,15 @@ minus.place(relx=0.68, rely=0.82, anchor="center")
 multi = tk.Button(root, height=10, width=20,text="*")
 multi.place(relx=0.32, rely=0.82, anchor="center")
 
-#button = tk.Button(root, text="Submit", command=math)
-#button.place(relx=0.5, rely=0.5, anchor="center")
+
+def value1(value):
+        valueOne = value
+
+def printTest():
+        print(valueOne)
+
+button = tk.Button(root, text="Submit", command=printTest())
+button.place(relx=0.32, rely=0.95, anchor="center")
 
 label = tk.Label(root, text="test")
 label.place(relx=0.5, rely=0.95, anchor="center")
