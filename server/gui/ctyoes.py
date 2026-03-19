@@ -2,10 +2,12 @@ import ctypes
 import tkinter as tk
 from tkinter import ttk
 import os
+import sys
 
 # Sets local path for ctypes
+ext = ".dll" if sys.platform == "win32" else ".so"
 dir = os.path.dirname(os.path.abspath(__file__))
-lib = ctypes.CDLL(os.path.join(dir, "../mylib.so"))
+lib = ctypes.CDLL(os.path.join(dir, f"../mylib{ext}"))
 
 root = tk.Tk()
 
