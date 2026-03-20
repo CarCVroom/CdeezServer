@@ -4,20 +4,19 @@ from tkinter import ttk
 import os
 import sys
 
-math1 = 0
-math2 = 0
-valueOne = 0
-valueTwo = 0
+math1 = ""
+math2 = ""
+valueOne = ""
+valueTwo = ""
 operator = ""
 
 def value1(value):
-        global valueOne
-        valueOne += str(value)
-
-        global valueTwo 
+        global valueOne, valueTwo, math2
+        
+        valueOne += str(value) 
         valueTwo += str(value)
-        global math2 
         math2 += str(value)
+        
         valueTwo = int(valueTwo)
         valueOne = int(valueOne)
         math2 = int(math2)
@@ -58,34 +57,34 @@ root = tk.Tk()
 root.title("simple calulator")
 root.geometry("900x900")
 
-one = tk.Button(root, height=10,width=20,text="1", command=lambda: value1(1) )
+one = tk.Button(root, height=10,width=20,text="1", command=lambda: value1("1") )
 one.place(relx=0.32, rely=0.1, anchor="center")
         
-two   = tk.Button(root, height=10, width=20, text="2", command=lambda: value1(2))
+two   = tk.Button(root, height=10, width=20, text="2", command=lambda: value1("2"))
 two.place(relx=0.5, rely=0.1, anchor="center")
 
-three = tk.Button(root, height=10, width=20, text="3", command=lambda: value1(3))
+three = tk.Button(root, height=10, width=20, text="3", command=lambda: value1("3"))
 three.place(relx=0.68, rely=0.1, anchor="center")
 
-four  = tk.Button(root, height=10, width=20, text="4", command=lambda: value1(4))
+four  = tk.Button(root, height=10, width=20, text="4", command=lambda: value1("4"))
 four.place(relx=0.32, rely=0.28, anchor="center")
 
-five  = tk.Button(root, height=10, width=20, text="5", command=lambda: value1(5))
+five  = tk.Button(root, height=10, width=20, text="5", command=lambda: value1("5"))
 five.place(relx=0.5, rely=0.28, anchor="center")
 
-six   = tk.Button(root, height=10, width=20, text="6", command=lambda: value1(6))
+six   = tk.Button(root, height=10, width=20, text="6", command=lambda: value1("6"))
 six.place(relx=0.68, rely=0.28, anchor="center")
 
-seven = tk.Button(root, height=10, width=20, text="7", command=lambda: value1(7))
+seven = tk.Button(root, height=10, width=20, text="7", command=lambda: value1("7"))
 seven.place(relx=0.32, rely=0.46, anchor="center")
 
-eight = tk.Button(root, height=10, width=20, text="8", command=lambda: value1(8))
+eight = tk.Button(root, height=10, width=20, text="8", command=lambda: value1("8"))
 eight.place(relx=0.5, rely=0.46, anchor="center")
 
-nine  = tk.Button(root, height=10, width=20, text="9", command=lambda: value1(9))
+nine  = tk.Button(root, height=10, width=20, text="9", command=lambda: value1("9"))
 nine.place(relx=0.68, rely=0.46, anchor="center")
 
-zero  = tk.Button(root, height=10, width=20, text="0", command=lambda: value1(0))
+zero  = tk.Button(root, height=10, width=20, text="0", command=lambda: value1("0"))
 zero.place(relx=0.5, rely=0.64, anchor="center")
 
 equal = tk.Button(root, height=10, width=20,text="=", command=lambda: math(operator, math1, math2))
