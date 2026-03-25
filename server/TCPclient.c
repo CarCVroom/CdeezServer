@@ -15,7 +15,7 @@ int main () {
         // spedify an address for the socket
         struct sockaddr_in serverAddress;
         serverAddress.sin_family = AF_INET;
-        serverAddress.sin_port = htons()
+        serverAddress.sin_port = htons();
         
 
         return 0;
